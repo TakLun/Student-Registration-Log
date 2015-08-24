@@ -1,0 +1,111 @@
+CS442 Design Pattern
+Spring 2014
+PROJECT 1 README FILE
+
+Due Date: Thursday, February 27, 2014
+Submission Date: Thursday, February 27, 2014
+Grace Period Used This Project: 2 Days
+Grace Period Remaining: 0 Days
+Author: Ernie Lee
+e-mail: elee36@binghamton.edu
+
+PURPOSE:
+
+[
+	The program reads a data file that contains student information, such as 
+	first name, last name, instructor name, and course number they are taking. 
+	The file is read using threading implemented by the Runnable class. All \
+	results are then placed in a data structure. Another file is then read that 
+	contains the entries to look for in the data structure that contains the 
+	student information. The search file is also read using threading.All 
+	matching entries is then placed in another data structure that is then 
+	printed out in the main class.
+]
+
+PERCENT COMPLETE:
+
+[
+	I believe I have completed 100% of this project.
+]
+
+PARTS THAT ARE NOT COMPLETE:
+
+[
+	I do not believe there are parts that are not complete.
+]
+
+BUGS:
+
+[
+	None
+]
+
+FILES:
+
+[
+	driver.java, the main file associated with the program also contains main
+	PopulateWorker.java, the file that reads dataFile.txt and stores into RegistrationStore
+	RegistrationStore.java, The file that contains the data structure that stores StudentInfo object
+	SearchWorker.java, the file that reads searchFile.txt and searches RegistrationStore for any matching entries. Matches are stored in Results.java
+	StudentInfo.java, the file that stores the information of the student read by the PopulateWorker file
+	FileRead.java, the file that contains the interface in which reads the a text file
+	Results.java, the file that contains the data structure that stores any matches read by SearchWorker file
+	Debug.java, the file that prints out a debug level and message if certain actions are involked.
+	dataFile.txt, file that contains the data needed to be inserted into a data structure
+	searchFile.txt, file that contains the search elements to search in dataFile.txt
+	README, that text file currently being read
+]
+
+SAMPLE OUTPUT:
+
+[
+	ernie@ernie-VirtualBox:~/Desktop/CS442/assignment_1/ernie_lee_assign1$ ant run 
+	Buildfile: build.xml
+
+	jar:
+	    [mkdir] Created dir: /home/ernie/Desktop/CS442/assignment_1/ernie_lee_assign1/build/jar
+		 [jar] Building jar: /home/ernie/Desktop/CS442/assignment_1/ernie_lee_assign1/build/jar/assignment_1.jar
+
+	run:
+		[java] eejujacee ahuribi eehi 365
+		[java] faq inutoo apumulloo 995
+		[java] datice sse cupu 293
+		[java] reeqi boofoo fufuru 285
+		[java] voboog imooyuxav voomeq 373
+		[java] esin oobeek igolooru 839
+		[java] noniyuxoo nom tulloovee 326
+		[java] ewavey kuseenefoo afook 174
+		[java] 
+
+	BUILD SUCCESSFUL
+	Total time: 1 second
+
+]
+
+TO COMPILE:
+
+[
+	Compile as: ant compile
+]
+
+TO RUN:
+
+[
+	Please run as: ant run
+]
+
+EXTRA CREDIT:
+
+[
+  N/A
+]
+
+
+BIBLIOGRAPHY:
+
+[
+  http://www.cs.binghamton.edu/~mgovinda/courses/csx42/px.html
+  
+   Freeman, Eric, Elisabeth Robson, Kathy Sierra, and Bert Bates. 
+   Head First Design Patterns. Sebastopol, CA: O'Reilly, 2004. Print.
+]

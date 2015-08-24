@@ -1,0 +1,72 @@
+
+<project name="assignment_1" default="compile" basedir=".">
+
+  <property name="build.compiler" value="modern"/>
+  <property name="src" value="src"/>
+  <property name="BUILD" value="build"/>
+  <property name="classes" value="${BUILD}/classes"/>
+  <property name="tarballFileName" value="ernie_lee_assign1.tar.gz"/>
+
+  <target name="compile"
+  		depends="assignment_1"/>
+
+  <target name="clean">
+       <delete dir="${BUILD}"/>
+  </target>
+
+
+
+
+  <!-- Prepare target directories -->
+  <target name="prepare">
+        <mkdir dir="${BUILD}"/>
+        <mkdir dir="${classes}"/>
+  </target>
+
+
+  <!-- ** means all subdirectories as well -->
+  <!-- * means all files in the current directory -->
+  <!-- for just java files use *.java -->
+
+  <target name="assignment_1" depends="prepare">
+    <javac srcdir="${src}"
+           includes="assignment_1/**"
+           excludes="**/package.html"
+           destdir="${classes}"
+           classpath="${classes}"
+           debug="on"
+           optimize="on"
+           deprecation="off"/>
+  </target>
+
+ <target name="jar">
+        <mkdir dir="${BUILD}/jar"/>
+        <jar destfile="${BUILD}/jar/assignment_1.jar" basedir="${BUILD}/classes">
+            <manifest>
+                <attribute name="Main-Class" value="driver.driver"/>
+            </manifest>
+        </jar>
+    </target>
+
+<target name="tar">
+  <tar destfile="./${tarballFileName}"
+       basedir="." compression="gzip"
+       includes="${src}/**, build.xml, README"/>
+</target>
+
+
+<target name="run" depends="jar">
+        <java jar="${BUILD}/jar/assignment_1.jar"  fork="true">
+	     <arg value="dataFile.txt"/>
+          <arg value="-1"/>
+	     <arg value="searchFile.txt"/>
+          <arg value="4"/>
+          <arg value="1"/>
+
+	 </java>
+	
+    </target>
+
+
+</project>
+
